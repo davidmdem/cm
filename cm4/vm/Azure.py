@@ -313,6 +313,7 @@ class AzureDriver(AzureNodeDriver, NodeDriver):
 
         # Create SSH security group
         sec_group_id = self._ex_create_network_security_group(f"{network_name}-ssh-group")
+        time.sleep(1)
 
         subnet_name = "default"
         subnet_cidr = "10.0.0.0/16"
