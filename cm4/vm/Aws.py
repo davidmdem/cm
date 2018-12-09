@@ -1,14 +1,15 @@
 from cm4.vm.Cloud import Cloud
 from cm4.configuration.config import Config
+from cm4.abstractclass.CloudManagerABC import CloudManagerABC
 
 from libcloud.compute.drivers.ec2 import EC2NodeDriver
 from libcloud.compute.base import NodeDriver
 
 
-class Aws(Cloud):
+class AwsProvider(CloudManagerABC, Cloud):
 
-    def __init__(self, config, kind):
-        os_config = config["cloud"][kind]
+    def __init__(self, config):
+        os_config = config["cloud"]["aws"]
         default = os_config.get('default')
         credentials = os_config.get('credentials')
         self.driver = AWSDriver(
