@@ -5,6 +5,7 @@ import abc
 # if name is none, take last name from mongo, apply to last started vm
 #
 
+# rename to ComputeNodeManger
 
 class CloudManagerABC(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -93,6 +94,7 @@ class CloudManagerABC(metaclass=abc.ABCMeta):
         """
         pass
 
+    @abc.abstractmethod
     def rename(self, name=None, destination=None):
         """
         rename a node

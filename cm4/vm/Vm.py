@@ -30,6 +30,9 @@ class Vm(CloudManagerABC):
         else:
             raise NotImplementedError(f"Cloud `{self.kind}` not supported.")
 
+    def new_start(self, name):
+        self.provider.start(name)
+
     def start(self, name):
         """
         start the node based on the id

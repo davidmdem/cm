@@ -22,13 +22,33 @@ class AzureProvider(CloudManagerABC, Cloud):
             cm_default=self.default
         )
 
+    # @mongodb_ingest
+    # decorate saves output to mongodb
+    # d needs
+    # - name
+    # - cloud
+    # - group
+    # - experiment (essentially the defaults)
+    # - modified_at (from mongo)
+    # - updated_at ? check against modified_at
+    # - status
+    #   - defined - written down, nothing happended
+    #   - created - vm create started
+    #   - boot -
+    #   - running - verified ssh
+    #   - stopped - finished stopping vm
+    #   - suspended - stopped, but resources aren't deallocated
+    #   - resumed - in process of resuming, getting to running state
     def start(self, name):
         """
-
+        # clean libcloud return obj to remove _uuid etc
         :param name:
         :return:
         """
         self.driver.ex_start_node(self.driver._get_node(name))
+        # d=self.driver.ex_start_node(self.driver._get_node(name))
+        # d=libcloud clean(d)
+        # return d
 
     def stop(self, name=None):
         """

@@ -13,7 +13,7 @@
       cm4 admin rest status
       cm4 admin rest start
       cm4 admin rest stop
-      cm4 admin status]
+      cm4 admin status
       cm4 data add FILE
       cm4 data add SERVICE FILE
       cm4 data get FILE
@@ -28,7 +28,7 @@
       cm4 set experiment EXPERIMENT
       cm4 set --key=KEY --value=VALUE
       cm4 vm create [VMNAME] [--count=VMNUMBER] [--debug] [--dryrun]
-      cm4 vm start [VMNAME] [--vms=VMLIST] [--count=VMNUMBER] [--debug] [--dryrun]
+      cm4 vm start [VMNAME] [--vms=VMLIST] [--count=VMNUMBER] [--debug] [--dryrun] [--cloud=CLOUD] [--group=GROUP][--experiment=EXPERMIMENT]
       cm4 vm stop [--vms=VMLIST] [--debug] [--dryrun]
       cm4 vm destroy [--vms=VMLIST] [--debug] [--dryrun]
       cm4 vm status [--vms=VMLIST] [--dryrun]
